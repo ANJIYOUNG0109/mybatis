@@ -29,16 +29,20 @@ public class LoginServlet extends HttpServlet {
 		String pwd = request.getParameter("userPwd");
 		
 		m.setUserId(id);
-		m.setUserId(pwd);
+		m.setUserPwd(pwd);
 		
 		
 //		MemberServiceImpl mi = new MemberServiceImpl();
+// 		mi = 
 		Member loginUser = new MemberServiceImpl().loginMember(m);
 		// 한줄 : Member loginUser = new MemberServiceImpl().loginMember(m);
 		
 		if(loginUser!=null) {
 			request.getSession().setAttribute("loginUser", loginUser);
 			response.sendRedirect(request.getContextPath());
+		} else {
+			request.setAttribute("errorMsg", "로그인실패");
+			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
 		}
 		
 	}
