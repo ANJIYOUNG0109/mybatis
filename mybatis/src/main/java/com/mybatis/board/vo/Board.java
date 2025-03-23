@@ -2,7 +2,7 @@ package com.mybatis.board.vo;
 
 import java.sql.Date;
 
-public class Borad {
+public class Board {
 	private int boardNo;
 	private String boardTitle;
 	private String boardContent;
@@ -11,10 +11,10 @@ public class Borad {
 	private Date createDate;
 	private String status;
 	 
-	public Borad() {
+	public Board() {
 	}
 
-	public Borad(int boardNo, String boardTitle, String boardContent, String boardWriter, int count, Date createDate,
+	public Board(int boardNo, String boardTitle, String boardContent, String boardWriter, int count, Date createDate,
 			String status) {
 		super();
 		this.boardNo = boardNo;
