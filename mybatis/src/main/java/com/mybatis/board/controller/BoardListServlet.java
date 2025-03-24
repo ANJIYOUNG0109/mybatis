@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 import com.mybatis.board.service.BoardServiceImpl;
 import com.mybatis.board.vo.Board;
-import com.mybatis.board.vo.Board;
 import com.mybatis.common.template.Pagination;
 import com.mybatis.common.vo.PageInfo;
 

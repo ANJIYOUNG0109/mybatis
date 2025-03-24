@@ -12,18 +12,18 @@ public class Template {
 		SqlSession sqlSession = null;
 		
 		// SqlSession생성하기 위해서는 SqlSessionFactory 필요
-		// SqlSessionFactory을 사용하려면 => SqlSessionFactoryBuilder
+		// SqlSessionFactory => SqlSessionFactoryBuilder
 		
 		String resources = "/mybatis-config.xml";
 		
 		try {
 			InputStream stream = Resources.getResourceAsStream(resources);
-			sqlSession = new SqlSessionFactoryBuilder().build(stream).openSession();
-			// openSession(false) : 수동커밋 => 기본값 , true => 자동커밋
+			sqlSession = new SqlSessionFactoryBuilder().build(stream).openSession(false);
+			// openSession(false) : 수동 commit => 기본값 ,  true=> 자동커밋
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return sqlSession;
 	}
-
 }

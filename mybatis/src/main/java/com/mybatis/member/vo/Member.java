@@ -14,11 +14,9 @@ public class Member {
     private Date enrollDate;
     private Date modifyDate;
     private String status;
-    
-    
+      
 	public Member() {
 	}
-
 	
 	public Member(String userId, String userPwd, String userName, String email, String birthday, String gender,
 			String phone, String address, Date enrollDate, Date modifyDate, String status) {

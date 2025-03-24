@@ -6,17 +6,17 @@ import com.mybatis.common.template.Template;
 import com.mybatis.member.dao.MemberDao;
 import com.mybatis.member.vo.Member;
 
-public class MemberServiceImpl implements MemberService {	
-	private MemberDao mDao = new MemberDao(); 
+public class MemberServiceImpl implements MemberService {
+	private MemberDao mDao = new MemberDao();
 	
 	@Override
 	public Member loginMember(Member m) {
 		SqlSession sqlSession = Template.getSqlSession();
-		Member loginUser = mDao.loginmember(sqlSession, m);
-		sqlSession.close();	
+		Member loginUser = mDao.loginMember(sqlSession, m);
+		sqlSession.close();
 		return loginUser;
 	}
-	
+
 	@Override
 	public int checkId(String userId) {
 		SqlSession sqlSession = Template.getSqlSession();
@@ -35,7 +35,5 @@ public class MemberServiceImpl implements MemberService {
 		sqlSession.close();
 		return result;
 	}
-
-	
 
 }
